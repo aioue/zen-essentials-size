@@ -1,0 +1,28 @@
+{
+  "id": "309af399-5a55-4838-a431-d0a716f115d7",
+  "name": "Essentials Size",
+  "description": "Scale only the icons inside Essentials boxes (25-300%) with a live-updating percentage.",
+  "homepage": "https://github.com/aioue/zen-essentials-size",
+  "style": {
+    "chrome": "chrome.css"
+  },
+  "scripts": {
+    "essentials-size.uc.mjs": {
+      "include": [
+        "chrome://browser/content/browser.xhtml"
+      ]
+    }
+  },
+  "preferences": "preferences.json",
+  "author": "aioue",
+  "version": "1.0.0",
+  "tags": [
+    "tabs"
+  ],
+  "fork": [
+    "zen"
+  ],
+  "image": "https://raw.githubusercontent.com/aioue/zen-essentials-size/main/image.png",
+  "createdAt": "2026-11-10",
+  "updatedAt": "2026-11-10"
+}

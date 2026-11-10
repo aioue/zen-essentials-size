@@ -1,0 +1,9 @@
+[
+  {
+    "property": "uc.essentials.size",
+    "label": "Essentials icon size in % of default (25-300). Updates live; optional script adds a slider via right-click on an Essential.",
+    "type": "string",
+    "placeholder": "100",
+    "defaultValue": "100"
+  }
+]

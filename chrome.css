@@ -1,0 +1,29 @@
+/*
+ * Essentials Size: scales ONLY the icons inside Essentials boxes. The boxes
+ * keep Zen's default size, and normal tabs, pinned tabs and SuperPins icons
+ * are untouched because every rule is scoped to [zen-essential].
+ *
+ * Zen turns the string pref `uc.essentials.size` into the :root custom
+ * property `--uc-essentials-size` (dots -> dashes) and refreshes it live, so
+ * this file needs no script. The value is a bare integer percent of Zen's
+ * 16px icon; 100 = default. clamp() keeps a typo from collapsing or exploding
+ * the icon. An unparsable value makes the declarations invalid, which falls
+ * back to Zen's own sizing.
+ */
+@media (-moz-pref("zen.tabs.vertical")) {
+  :root {
+    --ess-icon-size: calc(16px * clamp(0.25, calc(var(--uc-essentials-size, 100) / 100), 3));
+  }
+
+  .tabbrowser-tab[zen-essential="true"] {
+    & .tab-icon-stack,
+    & .tab-icon-image,
+    & .tab-icon-pending,
+    & .tab-icon-overlay,
+    & .tab-sharing-icon-overlay {
+      width: var(--ess-icon-size) !important;
+      height: var(--ess-icon-size) !important;
+      min-width: var(--ess-icon-size) !important;
+    }
+  }
+}
